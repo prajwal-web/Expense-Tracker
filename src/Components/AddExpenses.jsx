@@ -39,7 +39,7 @@ function AddExpense({ handleAddExpense, totExp, categories1 }) {
         <div className="col">
           <input
             type="number"
-            className="form-control abc cdf"
+            className="form-control "
             placeholder="Amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
