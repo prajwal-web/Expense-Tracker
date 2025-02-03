@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 
-function AddExpense({ handleAddExpense, totExp }) {
+function AddExpense({ handleAddExpense, totExp, categories1 }) {
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
-  const [date, setDate] = useState("");
+  const [categories, setCategories] = useState("");
 
   const onAddExpense = () => {
-    if (description && amount && date) {
+    if (description && amount) {
       let newExpense = {
         description,
         amount: parseFloat(amount),
-        date,
+        categories,
       };
       handleAddExpense(newExpense);
       setDescription("");
       setAmount("");
-      setDate("");
+      setCategories("");
     }
   };
 
@@ -42,15 +42,24 @@ function AddExpense({ handleAddExpense, totExp }) {
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
+
         <div className="col">
-          <input
-            type="date"
+          <select
+            name="categories"
+            id="categories"
             className="form-control"
-            name="Date"
-            id="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
+            value={categories}
+            onChange={(e) => setCategories(e.target.value)}
+          >
+            <option value="" className="form-control">
+              Select Category
+            </option>
+            {categories1.map((data, index) => (
+              <option value={data} key={index}>
+                {data}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="col">
           <button className="btn btn-success" onClick={onAddExpense}>

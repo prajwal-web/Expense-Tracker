@@ -5,6 +5,7 @@ import Expenses from "./Components/Expenses";
 import Navbar from "./Components/Navbar";
 
 function App() {
+  const category = ["Food", "Transport", "Utilities", "Entertainment", "Other"];
   const [expense, setExpense] = useState([]);
 
   const handleAddExpense = (newExpense) => {
@@ -23,7 +24,11 @@ function App() {
     <>
       <Navbar />
       <div className="container1">
-        <AddExpense handleAddExpense={handleAddExpense} totExp={totalExpense} />
+        <AddExpense
+          handleAddExpense={handleAddExpense}
+          totExp={totalExpense}
+          categories1={category}
+        />
         <Expenses
           expenses={expense}
           handleDeleteExpense={handleDeleteExpense}
