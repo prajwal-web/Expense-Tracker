@@ -9,6 +9,7 @@ function Expenses({ expenses, handleDeleteExpense }) {
           <tr>
             <th>Description</th>
             <th>Amount</th>
+            <th>Category</th>
             <th>Date</th>
             <th>Actions</th>
           </tr>
@@ -19,6 +20,7 @@ function Expenses({ expenses, handleDeleteExpense }) {
               <tr key={index}>
                 <td>{expense.description}</td>
                 <td>{`Rs.${expense.amount}`}</td>
+                <td>{expense.categories}</td>
                 <td>{expense.date}</td>
                 <td>
                   <button className="btn btn-secondary mx-2">Edit</button>

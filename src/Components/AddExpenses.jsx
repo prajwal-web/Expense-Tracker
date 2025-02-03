@@ -4,6 +4,7 @@ function AddExpense({ handleAddExpense, totExp, categories1 }) {
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [categories, setCategories] = useState("");
+  const [date, setdate] = useState("");
 
   const onAddExpense = () => {
     if (description && amount) {
@@ -11,11 +12,13 @@ function AddExpense({ handleAddExpense, totExp, categories1 }) {
         description,
         amount: parseFloat(amount),
         categories,
+        date,
       };
       handleAddExpense(newExpense);
       setDescription("");
       setAmount("");
       setCategories("");
+      setdate("");
     }
   };
 
@@ -60,6 +63,15 @@ function AddExpense({ handleAddExpense, totExp, categories1 }) {
               </option>
             ))}
           </select>
+        </div>
+        <div className="col">
+          <input
+            type="date"
+            className="form-control abc cdf"
+            placeholder="Amount"
+            value={date}
+            onChange={(e) => setdate(e.target.value)}
+          />
         </div>
         <div className="col">
           <button className="btn btn-success" onClick={onAddExpense}>
