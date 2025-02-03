@@ -3,6 +3,7 @@ import "./App.css";
 import AddExpense from "./Components/AddExpenses";
 import Expenses from "./Components/Expenses";
 import Navbar from "./Components/Navbar";
+import Checkbox from "./Components/Checkbox";
 
 function App() {
   const category = ["Food", "Transport", "Utilities", "Entertainment", "Other"];
@@ -33,7 +34,10 @@ function App() {
           expenses={expense}
           handleDeleteExpense={handleDeleteExpense}
         />
+        
       </div>
+      <Checkbox />
+      
     </>
   );
 }

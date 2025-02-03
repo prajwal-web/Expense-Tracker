@@ -11,3 +11,12 @@
   margin-top: 50px;
   margin-left: 18%;
 }
+
+.cls1{
+  display:flex;
+  width: 64%;
+  margin-left:19% ;
+  margin-top: 10px;
+  font-size: 19px;
+  font-family: 'Times New Roman', Times, serif;
+}
