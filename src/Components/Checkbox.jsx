@@ -1,28 +1,24 @@
 import React from "react";
 
-export default function Checkbox() {
+export default function Checkbox({ categories2 ,handleCheck}) {
+  
   return (
     <>
       <div className=" cls1">
         <div className="col">
-          <input type="checkbox" name="food" id="" />
-          Food
-        </div>
-        <div className="col">
-          <input type="checkbox" name="Transport" id="" />
-          Transport
-        </div>
-        <div className="col">
-          <input type="checkbox" name="utilities" id="" />
-          Utilities
-        </div>
-        <div className="col">
-          <input type="checkbox" name="others" id="" />
-          Enterntainment
-        </div>
-        <div className="col">
-          <input type="checkbox" name="check" id="" />
-          Others
+          {categories2.map((value, index) => {
+            return (
+              <label key={index}>
+                <input
+                  type="checkbox"
+                  name="food"
+                  value={value}
+                  onChange={handleCheck}
+                />
+                {value}
+              </label>
+            );
+          })}
         </div>
       </div>
     </>

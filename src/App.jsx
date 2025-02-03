@@ -20,6 +20,9 @@ function App() {
     (total, currentExpense) => total + currentExpense.amount,
     0
   );
+  function handleCheck(e) {
+    console.log(e.target.value + " " + e.target.checked);
+  }
 
   return (
     <>
@@ -34,10 +37,8 @@ function App() {
           expenses={expense}
           handleDeleteExpense={handleDeleteExpense}
         />
-        
       </div>
-      <Checkbox />
-      
+      <Checkbox categories2={category} handleCheck={handleCheck} />
     </>
   );
 }

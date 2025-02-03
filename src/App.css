@@ -12,11 +12,13 @@
   margin-left: 18%;
 }
 
-.cls1{
+.cls1 .col{
   display:flex;
+  justify-content: space-between;
   width: 64%;
-  margin-left:19% ;
+  margin-left:18% ; 
   margin-top: 10px;
   font-size: 19px;
   font-family: 'Times New Roman', Times, serif;
+ 
 }
