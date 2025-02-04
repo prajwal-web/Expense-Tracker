@@ -46,7 +46,7 @@ function App() {
       document.body.style.color = "black";
     } else {
       setMode("dark");
-      document.body.style.backgroundColor = "#042743";
+      document.body.style.backgroundColor = "#363636";
       document.body.style.color = "white";
     }
   };
