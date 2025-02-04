@@ -15,25 +15,31 @@ function Expenses({ expenses, handleDeleteExpense }) {
           </tr>
         </thead>
         <tbody>
-          {expenses.map((expense, index) => {
-            return (
-              <tr key={index}>
-                <td>{expense.description}</td>
-                <td>{`Rs.${expense.amount}`}</td>
-                <td>{expense.categories}</td>
-                <td>{expense.date}</td>
-                <td>
-                  <button className="btn btn-secondary mx-2">Edit</button>
-                  <button
-                    className="btn btn-danger my-1"
-                    onClick={() => handleDeleteExpense(index)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
+          {expenses.length === 0 ? (
+            <tr>
+              <td colSpan="5">No expenses to display</td>
+            </tr>
+          ) : (
+            expenses.map((expense, index) => {
+              return (
+                <tr key={index}>
+                  <td>{expense.description}</td>
+                  <td>{`Rs.${expense.amount}`}</td>
+                  <td>{expense.categories}</td>
+                  <td>{expense.date}</td>
+                  <td>
+                    <button className="btn btn-secondary mx-2">Edit</button>
+                    <button
+                      className="btn btn-danger my-1"
+                      onClick={() => handleDeleteExpense(index)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
     </div>

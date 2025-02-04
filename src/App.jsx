@@ -8,6 +8,7 @@ import Checkbox from "./Components/Checkbox";
 function App() {
   const category = ["Food", "Transport", "Utilities", "Entertainment", "Other"];
   const [expense, setExpense] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
   const handleAddExpense = (newExpense) => {
     setExpense([...expense, newExpense]);
@@ -16,13 +17,26 @@ function App() {
   const handleDeleteExpense = (expenseIndexToDelete) => {
     setExpense(expense.filter((exp, index) => index !== expenseIndexToDelete));
   };
+
   const totalExpense = expense.reduce(
     (total, currentExpense) => total + currentExpense.amount,
     0
   );
+
   function handleCheck(e) {
-    console.log(e.target.value + " " + e.target.checked);
+    const { value, checked } = e.target;
+    if (checked) {
+      setSelectedCategories([...selectedCategories, value]);
+    } else {
+      setSelectedCategories(selectedCategories.filter((cat) => cat !== value));
+    }
   }
+
+  const filteredExpenses = expense.filter(
+    (exp) =>
+      selectedCategories.length === 0 ||
+      selectedCategories.includes(exp.categories)
+  );
 
   return (
     <>
@@ -34,7 +48,7 @@ function App() {
           categories1={category}
         />
         <Expenses
-          expenses={expense}
+          expenses={filteredExpenses}
           handleDeleteExpense={handleDeleteExpense}
         />
       </div>
