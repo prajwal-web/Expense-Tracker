@@ -9,6 +9,7 @@ function App() {
   const category = ["Food", "Transport", "Utilities", "Entertainment", "Other"];
   const [expense, setExpense] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [mode, setMode] = useState("light");
 
   const handleAddExpense = (newExpense) => {
     setExpense([...expense, newExpense]);
@@ -38,9 +39,21 @@ function App() {
       selectedCategories.includes(exp.categories)
   );
 
+  const toggleMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+    } else {
+      setMode("dark");
+      document.body.style.backgroundColor = "#042743";
+      document.body.style.color = "white";
+    }
+  };
+
   return (
     <>
-      <Navbar />
+      <Navbar toggleMode={toggleMode} mode={mode} />
       <div className="container1">
         <AddExpense
           handleAddExpense={handleAddExpense}
