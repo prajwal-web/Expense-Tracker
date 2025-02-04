@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function Checkbox({ categories2 ,handleCheck}) {
-  
+export default function Checkbox({ categories2, handleCheck }) {
   return (
     <>
       <div className=" cls1">
