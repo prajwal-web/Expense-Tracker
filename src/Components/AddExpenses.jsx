@@ -74,7 +74,7 @@ function AddExpense({ handleAddExpense, totExp, categories1 }) {
           />
         </div>
         <div className="col">
-          <button className="btn btn-success" onClick={onAddExpense}>
+          <button className="btn btn-dark" onClick={onAddExpense}>
             Add
           </button>
         </div>
