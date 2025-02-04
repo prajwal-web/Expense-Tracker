@@ -16,9 +16,7 @@ function Expenses({ expenses, handleDeleteExpense }) {
         </thead>
         <tbody>
           {expenses.length === 0 ? (
-            <tr>
-              <td colSpan="5">No expenses to display</td>
-            </tr>
+            <tr></tr>
           ) : (
             expenses.map((expense, index) => {
               return (
